@@ -48,7 +48,7 @@ function App() {
   ];
 
   return (
-    <div className="h-screen w-screen bg-gradient-to-br from-red-500 via-orange-500 to-gray-500 flex flex-col overflow-y-auto">
+    <div className="h-screen w-screen bg-gradient-to-br from-red-500 via-orange-500 to-gray-500 flex flex-col overflow-y-auto overflow-x-hidden">
       <Navbar />
       <section id="home"></section>
       <Hero id="home"/>
