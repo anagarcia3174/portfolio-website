@@ -38,9 +38,9 @@ To run this portfolio locally, follow these steps:
 
 4. Add a .env file with your own environment variables (see .env.example for the structure).
 
-5. Start the development server: `npm start`
+5. Start the development server: `npm run dev`
 
-6. Open your browser and visit [http://localhost:5173](http://localhost:5173)
+6. Open your browser and visit the url stated in your terminal.
 
 ## Technologies Used
 - Vite + React: Vite is the build tool that provides fast development and optimized production builds, and React is the JavaScript library used to build the user interface.
