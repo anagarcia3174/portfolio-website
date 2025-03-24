@@ -38,6 +38,7 @@ const Skills = () => {
       category: "Frameworks & Libraries",
       skills: [
         { name: "React", icon: <FaReact size={48} />, color: "#61DAFB" },
+        {name: "React Native", icon: <FaReact size={48} />, color: "#61DAFB" },
         { name: "Node.js", icon: <FaNodeJs size={48} />, color: "#339933" },
         { name: "Flutter", icon: <FaFlutter size={48} />, color: "#02569B" },
         {

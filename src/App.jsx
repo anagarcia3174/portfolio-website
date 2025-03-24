@@ -7,6 +7,7 @@ import commentsLogo from './assets/comments.png';
 import folioLogo from './assets/folio.png';
 import chasingTimeLogo from './assets/chasingTime.png';
 import ContactForm from "./components/ContactForm";
+import refriLogo from './assets/refri.png';
 
 function App() {
   const projects = [
@@ -35,6 +36,15 @@ function App() {
         "https://github.com/UTRGV-CSCI-Senior-Project/senior_final_project",
       stack: ["Flutter", "Firebase", "Dart"],
       image: folioLogo
+    },
+    {
+      name: "Refri - (In Progress)",
+      about:
+        "Refri is a cross-platform mobile application that helps health-conscious individuals manage their kitchen inventory, discover macro-friendly recipes, and connect with like-minded people in a social media environment.",
+      link: "",
+      github: "https://github.com/anagarcia3174/Refri?tab=readme-ov-file#readme",
+      stack: ["React Native", "Firebase"],
+      image: refriLogo,
     },
     {
       name: "Chasing Time",
