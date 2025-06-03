@@ -14,6 +14,7 @@ import {
 import { motion, useInView } from "framer-motion";
 import { IoLogoJavascript, IoLogoFirebase } from "react-icons/io5";
 import { SiMongodb, SiTailwindcss, SiVercel } from "react-icons/si";
+import { SiTypescript } from "react-icons/si";
 
 const Skills = () => {
   const containerRef = useRef(null);
@@ -29,6 +30,11 @@ const Skills = () => {
           name: "JavaScript",
           icon: <IoLogoJavascript size={48} />,
           color: "#F7DF1E",
+        },
+        {
+          name: "TypeScript",
+          icon: <SiTypescript size={48} />,
+          color: "#3178C6",
         },
         { name: "Dart", icon: <FaDartLang size={48} />, color: "#0175C2" },
         { name: "GOlang", icon: <FaGolang size={48} />, color: "#00ADD8" },

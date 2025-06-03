@@ -12,6 +12,15 @@ import refriLogo from './assets/refri.png';
 function App() {
   const projects = [
     {
+      name: "Refri",
+      about:
+        "Refri is a cross-platform mobile application that helps health-conscious individuals track their nutrition goals, discover macro-friendly recipes, and connect with like-minded people in a social media environment.",
+      link: "",
+      github: "https://github.com/anagarcia3174/refri-backend",
+      stack: ["React Native", "Node.js", "Express", "MongoDB", "JavaScript"],
+      image: refriLogo,
+    },
+    {
       name: "Comments!",
       about:
         "Movie companion web app with timestamp-specific commenting, allowing users to post and view comments on movies at specific timestamps. Features real-time database integration, TMDB API integration, and Firebase Authentication.",
@@ -36,15 +45,6 @@ function App() {
         "https://github.com/UTRGV-CSCI-Senior-Project/senior_final_project",
       stack: ["Flutter", "Firebase", "Dart"],
       image: folioLogo
-    },
-    {
-      name: "Refri - (In Progress)",
-      about:
-        "Refri is a cross-platform mobile application that helps health-conscious individuals manage their kitchen inventory, discover macro-friendly recipes, and connect with like-minded people in a social media environment.",
-      link: "",
-      github: "https://github.com/anagarcia3174/Refri?tab=readme-ov-file#readme",
-      stack: ["React Native", "Firebase"],
-      image: refriLogo,
     },
     {
       name: "Chasing Time",
