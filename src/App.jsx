@@ -7,18 +7,18 @@ import commentsLogo from './assets/comments.png';
 import folioLogo from './assets/folio.png';
 import chasingTimeLogo from './assets/chasingTime.png';
 import ContactForm from "./components/ContactForm";
-import refriLogo from './assets/refri.png';
+import serverLogo from './assets/server.png';
 
 function App() {
   const projects = [
     {
-      name: "Refri",
+      name: "Express Backend Starter",
       about:
-        "Refri is a cross-platform mobile application that helps health-conscious individuals track their nutrition goals, discover macro-friendly recipes, and connect with like-minded people in a social media environment.",
+        "A comprehensive Express.js starter template built with TypeScript, featuring authentication, email services, and essential middleware for rapid API development.",
       link: "",
-      github: "https://github.com/anagarcia3174/refri-backend",
-      stack: ["React Native", "Node.js", "Express", "MongoDB", "JavaScript"],
-      image: refriLogo,
+      github: "https://github.com/anagarcia3174/express-backend-starter",
+      stack: ["Express", "Node.js", "TypeScript", "MongoDB", "JWT", "AWS SES"],
+      image: serverLogo,
     },
     {
       name: "Comments!",

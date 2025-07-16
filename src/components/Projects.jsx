@@ -54,7 +54,7 @@ const Projects = ({ name, about, link, github, stack, image }) => {
 
   return (
     <>
-      {name == "Refri" && (
+      {name == "Express Backend Starter" && (
         <motion.h1
           ref={ref2}
           variants={textVariants}
