@@ -13,7 +13,7 @@ import {
 } from "react-icons/fa6";
 import { motion, useInView } from "framer-motion";
 import { IoLogoJavascript, IoLogoFirebase } from "react-icons/io5";
-import { SiMongodb, SiTailwindcss, SiVercel } from "react-icons/si";
+import { SiMongodb, SiTailwindcss, SiVercel, SiExpo, SiSupabase } from "react-icons/si";
 import { SiTypescript } from "react-icons/si";
 
 const Skills = () => {
@@ -37,7 +37,6 @@ const Skills = () => {
           color: "#3178C6",
         },
         { name: "Dart", icon: <FaDartLang size={48} />, color: "#0175C2" },
-        { name: "GOlang", icon: <FaGolang size={48} />, color: "#00ADD8" },
       ],
     },
     {
@@ -45,18 +44,9 @@ const Skills = () => {
       skills: [
         { name: "React", icon: <FaReact size={48} />, color: "#61DAFB" },
         {name: "React Native", icon: <FaReact size={48} />, color: "#61DAFB" },
+        { name: "Expo", icon: <SiExpo size={48} />, color: "#000020" },
         { name: "Node.js", icon: <FaNodeJs size={48} />, color: "#339933" },
         { name: "Flutter", icon: <FaFlutter size={48} />, color: "#02569B" },
-        {
-          name: "Bootstrap",
-          icon: <FaBootstrap size={48} />,
-          color: "#7952B3",
-        },
-        {
-          name: "Tailwind CSS",
-          icon: <SiTailwindcss size={48} />,
-          color: "#06B6D4",
-        },
       ],
     },
     {
@@ -71,6 +61,7 @@ const Skills = () => {
         { name: "Git", icon: <FaGit size={48} />, color: "#F05032" },
         { name: "GitHub", icon: <FaGithub size={48} />, color: "#181717" },
         { name: "Vercel", icon: <SiVercel size={48} />, color: "#000000" },
+        { name: "Supabase", icon: <SiSupabase size={48} />, color: "#3ECF8E" },
       ],
     },
   ];
@@ -135,7 +126,7 @@ const Skills = () => {
           variants={textVariants}
           initial="hidden"
           animate={isInView2 ? "visible" : "hidden"}
-          className="text-3xl md:text-4xl font-bold text-amber-900 mb-8"
+          className="text-3xl md:text-4xl font-bold text-[#F05023] mb-8 font-heading"
         >
           Technical Skills
         </motion.h1>

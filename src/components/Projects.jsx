@@ -4,7 +4,7 @@ import { MdOutlineOpenInNew } from "react-icons/md";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
-const Projects = ({ name, about, link, github, stack, image }) => {
+const Projects = ({ name, about, link, github, stack, image, isCurrentlyBuilding }) => {
   const containerRef = useRef(null);
   const isInView = useInView(containerRef, { once: true, amount: 0.3 });
   const ref2 = useRef(null);
@@ -20,7 +20,7 @@ const Projects = ({ name, about, link, github, stack, image }) => {
       y: 0,
       transition: {
         duration: 0.6,
-        ease: [0.22, 1, 0.36, 1], // Custom cubic bezier for smooth easing
+        ease: [0.22, 1, 0.36, 1],
         staggerChildren: 0.1,
       },
     },
@@ -54,13 +54,13 @@ const Projects = ({ name, about, link, github, stack, image }) => {
 
   return (
     <>
-      {name == "Express Backend Starter" && (
+      {name == "Talkie" && (
         <motion.h1
           ref={ref2}
           variants={textVariants}
           initial="hidden"
           animate={isInView2 ? "visible" : "hidden"}
-          className="text-3xl md:text-4xl font-bold text-amber-900 mb-8 text-center"
+          className="text-3xl md:text-4xl font-bold text-[#F05023] mb-8 text-center font-heading"
         >
           Projects
         </motion.h1>
@@ -72,8 +72,8 @@ const Projects = ({ name, about, link, github, stack, image }) => {
         initial="hidden"
         animate={isInView ? "visible" : "hidden"}
         whileHover={{ scale: 1.05 }}
-        className="rounded-2xl backdrop-blur-md bg-gradient-to-r from-white/10 to-white/5 
-          grid grid-cols-1 lg:grid-cols-12 gap-5 xl:gap-10 p-6 
+        className="rounded-2xl backdrop-blur-md bg-gradient-to-r from-white/10 to-white/5
+          grid grid-cols-1 lg:grid-cols-12 gap-5 xl:gap-10 p-6
           transform transition-all duration-700 ease-out my-6"
       >
         <motion.div
@@ -81,12 +81,11 @@ const Projects = ({ name, about, link, github, stack, image }) => {
           className="lg:col-span-5 flex items-center justify-center"
         >
           <div className="w-full h-72 max-w-[300px] relative">
-          <img
-            src={image}
-            className="rounded-lg absolute inset-0 w-full h-full object-cover"
-          />
+            <img
+              src={image}
+              className="rounded-lg absolute inset-0 w-full h-full object-cover"
+            />
           </div>
-
         </motion.div>
 
         <motion.div
@@ -94,9 +93,32 @@ const Projects = ({ name, about, link, github, stack, image }) => {
           className="flex flex-col gap-4 lg:col-span-7"
         >
           <div className="flex items-center justify-between">
-            <h2 className="text-2xl sm:text-3xl xl:text-4xl font-bold text-white">
-              {name}
-            </h2>
+            <div className="flex flex-wrap items-center gap-2">
+              <h2 className="text-2xl sm:text-3xl xl:text-4xl font-bold text-white font-heading">
+                {name}
+              </h2>
+              {isCurrentlyBuilding && (
+                <motion.span
+                  className="inline-flex items-center gap-1.5 text-xs font-semibold px-2.5 py-1 rounded-full
+                             bg-[#F05023]/20 text-[#F05023] border border-[#F05023]/30 font-heading"
+                  animate={{
+                    boxShadow: [
+                      "0 0 0 0 rgba(240,80,35,0)",
+                      "0 0 0 6px rgba(240,80,35,0.15)",
+                      "0 0 0 0 rgba(240,80,35,0)",
+                    ],
+                  }}
+                  transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                >
+                  <motion.span
+                    className="w-1.5 h-1.5 rounded-full bg-[#F05023]"
+                    animate={{ scale: [1, 1.4, 1], opacity: [1, 0.6, 1] }}
+                    transition={{ duration: 1.5, repeat: Infinity }}
+                  />
+                  Currently Building
+                </motion.span>
+              )}
+            </div>
             <div className="flex gap-3 md:gap-4 text-xl sm:text-2xl xl:text-3xl">
               {link && (
                 <motion.a
@@ -119,7 +141,7 @@ const Projects = ({ name, about, link, github, stack, image }) => {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="rounded-full p-2.5 bg-white/10 hover:bg-white/20 transition-colors duration-300"
-                  aria-label="View Live Demo"
+                  aria-label="View GitHub Repository"
                 >
                   <FaGithub />
                 </motion.a>
@@ -132,7 +154,7 @@ const Projects = ({ name, about, link, github, stack, image }) => {
               <motion.p
                 variants={childVariants}
                 key={item}
-                className="uppercase whitespace-nowrap bg-gradient-to-br from-amber-800 to-amber-900 px-2 py-1.5 md:py-2 md:px-3 rounded text-sm md:text-base font-medium text-white"
+                className="uppercase whitespace-nowrap bg-[#2a2a2d]  px-2 py-1.5 md:py-2 md:px-3 rounded text-sm md:text-base font-medium text-white"
               >
                 {item}
               </motion.p>

@@ -94,7 +94,7 @@ const ContactForm = () => {
                 <motion.h1
                     ref={ref2}
                     variants={textVariants}
-                    className="text-3xl md:text-4xl font-bold text-amber-900 mb-8 text-center"
+                    className="text-3xl md:text-4xl font-bold text-[#F05023] mb-8 text-center font-heading"
                 >
                     Contact Me
                 </motion.h1>
@@ -102,12 +102,12 @@ const ContactForm = () => {
                 {hasSubmitted ? (
                     <motion.div 
                         variants={formVariants}
-                        className="backdrop-blur-md bg-gradient-to-r from-white/50 to-white/30 text-green-950 px-4 py-3 rounded relative mb-6"
+                        className="backdrop-blur-md bg-gradient-to-r from-white/50 to-white/30 text-gray-900 px-4 py-3 rounded relative mb-6"
                     >
                         <p className="text-center">Thank you for your message! I'll get back to you soon.</p>
                         <button 
                             onClick={() => setHasSubmitted(false)}
-                            className="mt-4 w-full bg-green-700 hover:bg-green-950 text-white font-semibold py-3 px-6 rounded-lg transition duration-200"
+                            className="mt-4 w-full bg-[#646469] hover:bg-[#4a4a4d] text-white font-semibold py-3 px-6 rounded-lg transition duration-200"
                         >
                             Send Another Message
                         </button>
@@ -129,7 +129,7 @@ const ContactForm = () => {
                         )}
 
                         <motion.div variants={formItemVariants} className="space-y-2">
-                            <label htmlFor="name" className="block text-md font-semibold text-amber-900">
+                            <label htmlFor="name" className="block text-md font-semibold text-[#F05023]">
                                 Name
                             </label>
                             <input
@@ -138,13 +138,13 @@ const ContactForm = () => {
                                 name="name"
                                 required
                                 disabled={isSubmitting}
-                                className="w-full py-3 px-4 text-white bg-white/10 backdrop-blur-md border border-gray-300/50 rounded-lg placeholder:text-white text-md outline-none transition-all focus:ring-2 focus:ring-amber-900 disabled:opacity-50"
+                                className="w-full py-3 px-4 text-white bg-white/10 backdrop-blur-md border border-gray-300/50 rounded-lg placeholder:text-white text-md outline-none transition-all focus:ring-2 focus:ring-[#F05023] disabled:opacity-50"
                                 placeholder="Enter your name"
                             />
                         </motion.div>
 
                         <motion.div variants={formItemVariants} className="space-y-2">
-                            <label htmlFor="email" className="block text-md font-semibold text-amber-900">
+                            <label htmlFor="email" className="block text-md font-semibold text-[#F05023]">
                                 Email
                             </label>
                             <input
@@ -153,13 +153,13 @@ const ContactForm = () => {
                                 name="email"
                                 required
                                 disabled={isSubmitting}
-                                className="w-full py-3 px-4 text-white bg-white/10 backdrop-blur-md border border-gray-300/50 rounded-lg placeholder:text-white text-md outline-none transition-all focus:ring-2 focus:ring-amber-900 disabled:opacity-50"
+                                className="w-full py-3 px-4 text-white bg-white/10 backdrop-blur-md border border-gray-300/50 rounded-lg placeholder:text-white text-md outline-none transition-all focus:ring-2 focus:ring-[#F05023] disabled:opacity-50"
                                 placeholder="you@example.com"
                             />
                         </motion.div>
 
                         <motion.div variants={formItemVariants} className="space-y-2">
-                            <label htmlFor="subject" className="block text-md font-semibold text-amber-900">
+                            <label htmlFor="subject" className="block text-md font-semibold text-[#F05023]">
                                 Subject
                             </label>
                             <input
@@ -168,13 +168,13 @@ const ContactForm = () => {
                                 name="subject"
                                 required
                                 disabled={isSubmitting}
-                                className="w-full py-3 px-4 text-white bg-white/10 backdrop-blur-md border border-gray-300/50 rounded-lg placeholder:text-white text-md outline-none transition-all focus:ring-2 focus:ring-amber-900 disabled:opacity-50"
+                                className="w-full py-3 px-4 text-white bg-white/10 backdrop-blur-md border border-gray-300/50 rounded-lg placeholder:text-white text-md outline-none transition-all focus:ring-2 focus:ring-[#F05023] disabled:opacity-50"
                                 placeholder="What's this about?"
                             />
                         </motion.div>
 
                         <motion.div variants={formItemVariants} className="space-y-2">
-                            <label htmlFor="message" className="block text-md font-semibold text-amber-900">
+                            <label htmlFor="message" className="block text-md font-semibold text-[#F05023]">
                                 Message
                             </label>
                             <textarea
@@ -183,7 +183,7 @@ const ContactForm = () => {
                                 name="message"
                                 required
                                 disabled={isSubmitting}
-                                className="w-full py-3 px-4 text-white bg-white/10 backdrop-blur-md border border-gray-300/50 rounded-lg placeholder:text-white text-md outline-none transition-all focus:ring-2 focus:ring-amber-900 disabled:opacity-50"
+                                className="w-full py-3 px-4 text-white bg-white/10 backdrop-blur-md border border-gray-300/50 rounded-lg placeholder:text-white text-md outline-none transition-all focus:ring-2 focus:ring-[#F05023] disabled:opacity-50"
                                 placeholder="Your message here..."
                             ></textarea>
                         </motion.div>
@@ -192,7 +192,7 @@ const ContactForm = () => {
                             variants={formItemVariants}
                             type="submit"
                             disabled={isSubmitting}
-                            className="w-full bg-amber-900 hover:bg-green-950 text-white font-semibold py-3 px-6 rounded-lg transition duration-200 ease-in-out transform hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-2 disabled:opacity-50 disabled:hover:scale-100 disabled:cursor-not-allowed"
+                            className="w-full bg-[#F05023] hover:bg-[#c94018] text-white font-semibold py-3 px-6 rounded-lg transition duration-200 ease-in-out transform hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-[#F05023] focus:ring-offset-2 disabled:opacity-50 disabled:hover:scale-100 disabled:cursor-not-allowed"
                         >
                             {isSubmitting ? 'Sending...' : 'Send Message'}
                         </motion.button>

@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Skills from "./components/Skills";
@@ -8,9 +9,24 @@ import folioLogo from './assets/folio.png';
 import chasingTimeLogo from './assets/chasingTime.png';
 import ContactForm from "./components/ContactForm";
 import serverLogo from './assets/server.png';
+import talkieLogo from './assets/talkie.png';
+import ScrollProgressBar from "./components/ScrollProgressBar";
+import Footer from "./components/Footer";
 
 function App() {
+  const scrollContainerRef = useRef(null);
+
   const projects = [
+    {
+      name: "Talkie",
+      about:
+        "Social mobile app for tracking and reviewing movies and TV shows, with a PostgreSQL/Supabase backend, live TMDB API integration, Apple Sign-In, and a scalable service-layer architecture.",
+      link: "",
+      github: "https://github.com/anagarcia3174/talkie",
+      stack: ["React Native", "Expo", "TypeScript", "Supabase", "NativeWind", "Zustand"],
+      image: talkieLogo,
+      isCurrentlyBuilding: true,
+    },
     {
       name: "Express Backend Starter",
       about:
@@ -58,7 +74,11 @@ function App() {
   ];
 
   return (
-    <div className="h-screen w-screen bg-gradient-to-br from-red-500 via-orange-500 to-gray-500 flex flex-col overflow-y-auto overflow-x-hidden">
+    <div
+      ref={scrollContainerRef}
+      className="h-screen w-screen bg-animated flex flex-col overflow-y-auto overflow-x-hidden"
+    >
+      <ScrollProgressBar containerRef={scrollContainerRef} />
       <Navbar />
       <section id="home"></section>
       <Hero id="home"/>
@@ -69,20 +89,13 @@ function App() {
       <DownArrow />
       <div className="container mx-auto px-4 py-16 max-w-6xl">
         {projects.map((project) => (
-          <Projects
-            key={project.name}
-            name={project.name}
-            about={project.about}
-            link={project.link}
-            github={project.github}
-            stack={project.stack}
-            image={project.image}
-          />
+          <Projects key={project.name} {...project} />
         ))}
       </div>
       <section id="contact"></section>
       <DownArrow />
-      <ContactForm id = "contact"/>
+      <ContactForm id="contact"/>
+      <Footer />
     </div>
   );
 }
