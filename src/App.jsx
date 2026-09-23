@@ -1,103 +1,13 @@
-import { useRef } from "react";
-import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
-import Skills from "./components/Skills";
-import DownArrow from "./components/DownArrow";
-import Projects from "./components/Projects";
-import commentsLogo from './assets/comments.png';
-import folioLogo from './assets/folio.png';
-import chasingTimeLogo from './assets/chasingTime.png';
-import ContactForm from "./components/ContactForm";
-import serverLogo from './assets/server.png';
-import talkieLogo from './assets/talkie.png';
-import ScrollProgressBar from "./components/ScrollProgressBar";
-import Footer from "./components/Footer";
+import Desktop from './components/Desktop';
+import Phone from './components/Phone';
+import { useViewport } from './hooks';
+
+// Below this width the fake desktop gets too small to use, so switch to the phone layout.
+const PHONE_BREAKPOINT = 768;
 
 function App() {
-  const scrollContainerRef = useRef(null);
-
-  const projects = [
-    {
-      name: "Talkie",
-      about:
-        "Social mobile app for tracking and reviewing movies and TV shows, with a PostgreSQL/Supabase backend, live TMDB API integration, Apple Sign-In, and a scalable service-layer architecture.",
-      link: "",
-      github: "https://github.com/anagarcia3174/talkie",
-      stack: ["React Native", "Expo", "TypeScript", "Supabase", "NativeWind", "Zustand"],
-      image: talkieLogo,
-      isCurrentlyBuilding: true,
-    },
-    {
-      name: "Express Backend Starter",
-      about:
-        "A comprehensive Express.js starter template built with TypeScript, featuring authentication, email services, and essential middleware for rapid API development.",
-      link: "",
-      github: "https://github.com/anagarcia3174/express-backend-starter",
-      stack: ["Express", "Node.js", "TypeScript", "MongoDB", "JWT", "AWS SES"],
-      image: serverLogo,
-    },
-    {
-      name: "Comments!",
-      about:
-        "Movie companion web app with timestamp-specific commenting, allowing users to post and view comments on movies at specific timestamps. Features real-time database integration, TMDB API integration, and Firebase Authentication.",
-      link: "https://movie-app-client-seven.vercel.app/",
-      github: "https://github.com/anagarcia3174/movie-app",
-      stack: [
-        "React",
-        "Firebase",
-        "Node.js",
-        "Express",
-        "MongoDB",
-        "JavaScript",
-      ],
-      image: commentsLogo
-    },
-    {
-      name: "Folio",
-      about:
-        "Mobile app connecting service-based professionals with local clients, featuring robust authentication, real-time messaging, and location-based portfolio discovery",
-      link: "",
-      github:
-        "https://github.com/UTRGV-CSCI-Senior-Project/senior_final_project",
-      stack: ["Flutter", "Firebase", "Dart"],
-      image: folioLogo
-    },
-    {
-      name: "Chasing Time",
-      about:
-        "Endless runner game featuring procedural generation, optimized object pooling, and dynamic player animations. Awarded top 3 out of all games in the UTRGV Game Dev course in Spring 2024.",
-      link: "https://play.unity.com/en/games/1ad98862-c125-4a72-91dc-cf366fe2f2d5/chasing-time",
-      github: "",
-      stack: ["C#", "Unity"],
-      image: chasingTimeLogo,
-    },
-  ];
-
-  return (
-    <div
-      ref={scrollContainerRef}
-      className="h-screen w-screen bg-animated flex flex-col overflow-y-auto overflow-x-hidden"
-    >
-      <ScrollProgressBar containerRef={scrollContainerRef} />
-      <Navbar />
-      <section id="home"></section>
-      <Hero id="home"/>
-      <section id="skills"></section>
-      <DownArrow />
-      <Skills />
-      <section id="projects"></section>
-      <DownArrow />
-      <div className="container mx-auto px-4 py-16 max-w-6xl">
-        {projects.map((project) => (
-          <Projects key={project.name} {...project} />
-        ))}
-      </div>
-      <section id="contact"></section>
-      <DownArrow />
-      <ContactForm id="contact"/>
-      <Footer />
-    </div>
-  );
+  const viewport = useViewport();
+  return viewport.w < PHONE_BREAKPOINT ? <Phone /> : <Desktop viewport={viewport} />;
 }
 
 export default App;

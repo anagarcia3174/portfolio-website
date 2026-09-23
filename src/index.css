@@ -1,132 +1,60 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&display=swap');
+@import './nocturne/tokens.css';
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-/* =========================
-   Root & Typography
-========================= */
+/* Slightly larger type than the original design tokens, for readability. */
 :root {
-  font-family: "Inter", sans-serif;
-
-  /* Color system */
-  --bg-dark: #1c1c1e;
-  --bg-mid: #2a2a2d;
-  --accent: #F05023;
-  --gray: #646469;
+  --type-h3: var(--fw-semibold) 25px/var(--lh-snug) var(--font-display);
+  --type-body: var(--fw-regular) 17px/var(--lh-normal) var(--font-body);
+  --type-body-sm: var(--fw-regular) 15.5px/var(--lh-normal) var(--font-body);
+  --type-window-title: var(--fw-bold) 15px/1 var(--font-mono);
+  --type-menu: var(--fw-regular) 14px/1 var(--font-mono);
+  --type-label: var(--fw-bold) 12px/1 var(--font-mono);
+  --type-icon-label: var(--fw-regular) 13px/1.2 var(--font-mono);
+  --type-code: var(--fw-regular) 14px/var(--lh-normal) var(--font-mono);
 }
 
 html, body, #root {
-  min-height: 100%;
-  background-color: var(--bg-dark);
-  color: #ffffff;
+  height: 100%;
 }
 
-h1, h2, h3 {
-  font-family: 'Poppins', sans-serif;
+body {
+  background: var(--ink-1000);
+  overflow: hidden;
 }
 
-
-/* =========================
-   Animated Background
-========================= */
-.bg-animated {
-  position: relative;
-
-  background:
-    radial-gradient(circle at 20% 30%, rgba(240, 80, 35, 0.15), transparent 40%),
-    radial-gradient(circle at 80% 70%, rgba(240, 80, 35, 0.08), transparent 50%),
-    linear-gradient(120deg, var(--bg-dark), var(--bg-mid), var(--bg-dark));
-
-  background-size: 200% 200%;
-  animation: gradientShift 25s ease infinite;
+/* Phone: Safari tints its status bar and toolbar from the page's solid background
+   color (gradients are ignored and show as white), so match the olive top bar and dock. */
+html.phone,
+html.phone body {
+  background-color: var(--surface-desktop);
 }
 
-/* Soft grid overlay for subtle dev aesthetic */
-.bg-animated::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-
-  background-image:
-    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
-
-  background-size: 40px 40px;
-  pointer-events: none;
+a {
+  text-decoration: none;
 }
 
-/* Very subtle noise layer */
-.bg-animated::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-
-  background-image: repeating-radial-gradient(
-    circle at 0 0,
-    transparent 0,
-    rgba(255,255,255,0.02) 1px,
-    transparent 2px
-  );
-
-  opacity: 0.4;
-  pointer-events: none;
+/* Signature Nocturne interactions: hover lifts, press sinks into its own shadow. */
+.nos-press {
+  transition: transform var(--dur-instant) var(--ease-out), box-shadow var(--dur-instant) var(--ease-out), background var(--dur-fast) var(--ease-out);
+}
+.nos-press:not(:disabled):hover {
+  box-shadow: var(--shadow-hard) !important;
+}
+.nos-press:not(:disabled):active {
+  transform: translate(2px, 2px);
+  box-shadow: none !important;
 }
 
-
-/* =========================
-   Gradient Animation
-========================= */
-@keyframes gradientShift {
-  0%, 100% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
+.nos-row:hover {
+  background: var(--surface-control-hover) !important;
+  color: var(--text-body) !important;
 }
 
-
-/* =========================
-   Accent Utilities
-========================= */
-.accent {
-  color: var(--accent);
+.nos-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: var(--ink-400) transparent;
 }
 
-.accent-bg {
-  background-color: var(--accent);
-}
-
-.accent-border {
-  border-color: var(--accent);
-}
-
-
-/* =========================
-   Scroll Progress Bar
-========================= */
-.scroll-progress-bar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-
-  height: 3px;
-  z-index: 9999;
-
-  transform-origin: left;
-  background: var(--accent);
-}
-
-
-/* =========================
-   Optional Glow Orbs
-========================= */
-.blur-orb {
-  position: absolute;
-  width: 300px;
-  height: 300px;
-
-  background: var(--accent);
-  filter: blur(120px);
-  opacity: 0.15;
-  pointer-events: none;
+@media (prefers-reduced-motion: reduce) {
+  .nos-press { transition: none; }
 }

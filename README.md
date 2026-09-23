@@ -44,14 +44,17 @@ To run this portfolio locally, follow these steps:
 
 ## Technologies Used
 - Vite + React: Vite is the build tool that provides fast development and optimized production builds, and React is the JavaScript library used to build the user interface.
-- TailwindCSS: A utility-first CSS framework used for styling the components and layout, providing a responsive and clean design.
+- Plain CSS design tokens + inline-styled React components, ported from a Claude Design system (retro desktop-OS look). Icons from Lucide, fonts from Google Fonts.
+- EmailJS: powers the contact form.
 
 ## Project Structure
 
 The project structure follows a standard React application layout. Key directories include:
 
-- `src/components`: Contains all components used to build different sections of the portfolio.
-- `src/assets`: Contains all images used throughout the portfolio.
+- `src/components`: The desktop layout (`Desktop.jsx`), phone layout (`Phone.jsx`), and pieces shared by both (`shared.jsx`).
+- `src/data/portfolio.js`: All site content — profile, projects, skills, experience, education, and the resume.
+- `src/nocturne`: Design tokens and the UI components (windows, buttons, dock, etc.).
+- `src/assets`: Images and the resume PDF.
 - `public`: Static assets
 
 ## License

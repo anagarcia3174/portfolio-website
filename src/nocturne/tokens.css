@@ -1,0 +1,218 @@
+/* Nocturne OS design tokens — copied from the Claude Design export (design-export/). */
+/* Nocturne OS — color system. Dark, moody retro-desktop palette. */
+:root{
+  /* --- base neutrals: cold green-black "CRT" ink --- */
+  --ink-1000:#07090A;
+  --ink-900:#0D1112;
+  --ink-800:#14191A;
+  --ink-700:#1B2224;
+  --ink-600:#242D2F;
+  --ink-500:#323D3F;
+  --ink-400:#475457;
+  --ink-300:#68767A;
+  --ink-200:#8F9C9E;
+
+  /* --- bone / paper: the cream of the original desktop, dimmed --- */
+  --bone-100:#EFE7D6;
+  --bone-200:#DED4BF;
+  --bone-300:#C4B99F;
+  --bone-400:#A39880;
+  --bone-500:#7C7361;
+
+  /* --- chrome: title bars, menu bars, dock --- */
+  --olive-700:#2C3320;
+  --olive-600:#3D472B;
+  --olive-500:#556240;
+  --teal-800:#132A2E;
+  --teal-700:#1B3A40;
+  --teal-600:#255057;
+
+  /* --- accents --- */
+  --amber-500:#E0A33E;
+  --amber-600:#C2852A;
+  --amber-300:#F0C577;
+  --magenta-500:#C7568F;
+  --magenta-600:#A73F73;
+  --cyan-500:#5AB7C4;
+  --cyan-600:#3E939F;
+  --lime-500:#A8C43A;
+  --rust-500:#D2632A;
+  --red-500:#D14B42;
+  --red-600:#A93A33;
+
+  /* --- semantic surfaces --- */
+  --surface-desktop:var(--teal-800);
+  --surface-window:var(--ink-800);
+  --surface-window-raised:var(--ink-700);
+  --surface-inset:var(--ink-900);
+  --surface-paper:var(--bone-100);      /* light "document" area inside a dark window */
+  --surface-chrome:var(--olive-600);    /* active title bar / menu bar */
+  --surface-chrome-inactive:var(--ink-600);
+  --surface-dock:rgba(13,17,18,.82);
+  --surface-control:var(--ink-600);
+  --surface-control-hover:var(--ink-500);
+  --surface-control-active:var(--ink-700);
+  --surface-overlay:rgba(7,9,10,.62);
+
+  /* --- semantic text --- */
+  --text-body:var(--bone-100);
+  --text-muted:var(--bone-400);
+  --text-dim:var(--ink-200);
+  --text-on-paper:var(--ink-900);
+  --text-on-paper-muted:var(--bone-500);
+  --text-on-chrome:var(--bone-100);
+  --text-accent:var(--amber-500);
+  --text-link:var(--cyan-500);
+  --text-link-hover:var(--amber-500);
+  --text-inverse:var(--ink-1000);
+
+  /* --- semantic lines --- */
+  --line-hard:var(--ink-1000);          /* the signature 2px outline */
+  --line-soft:var(--ink-500);
+  --line-paper:var(--ink-900);
+  --line-glow:var(--amber-500);
+
+  /* --- semantic state --- */
+  --state-focus:var(--amber-500);
+  --state-selected:var(--teal-600);
+  --state-danger:var(--red-500);
+  --state-success:var(--lime-500);
+  --state-warning:var(--amber-500);
+  --state-info:var(--cyan-500);
+  --state-disabled-fg:var(--ink-300);
+  --state-disabled-bg:var(--ink-700);
+}
+
+/* Nocturne OS — typography. Two families: typewriter mono for all system chrome,
+   a grotesque for headlines and long-form copy. */
+:root{
+  --font-mono:"Courier Prime","Courier New",ui-monospace,monospace;
+  --font-display:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif;
+  --font-body:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif;
+
+  /* base sizes */
+  --fs-10:10px; --fs-11:11px; --fs-12:12px; --fs-13:13px; --fs-14:14px;
+  --fs-16:16px; --fs-18:18px; --fs-22:22px; --fs-28:28px; --fs-36:36px;
+  --fs-48:48px; --fs-64:64px;
+
+  --lh-tight:1.05; /* @kind font */
+  --lh-snug:1.25; /* @kind font */
+  --lh-normal:1.45; /* @kind font */
+  --lh-loose:1.6; /* @kind font */
+
+  --ls-tight:-0.02em; /* @kind font */
+  --ls-normal:0; /* @kind font */
+  --ls-wide:0.06em; /* @kind font */
+  --ls-caps:0.14em; /* @kind font */   /* menu bar, window titles, labels */
+
+  --fw-regular:400; /* @kind font */
+  --fw-semibold:600; /* @kind font */
+  --fw-bold:700; /* @kind font */
+  --fw-black:800; /* @kind font */
+
+  /* semantic roles */
+  --type-display:var(--fw-black) var(--fs-48)/var(--lh-tight) var(--font-display);
+  --type-h1:var(--fw-bold) var(--fs-36)/var(--lh-tight) var(--font-display);
+  --type-h2:var(--fw-bold) var(--fs-28)/var(--lh-snug) var(--font-display);
+  --type-h3:var(--fw-semibold) var(--fs-22)/var(--lh-snug) var(--font-display);
+  --type-body:var(--fw-regular) var(--fs-16)/var(--lh-normal) var(--font-body);
+  --type-body-sm:var(--fw-regular) var(--fs-14)/var(--lh-normal) var(--font-body);
+  --type-window-title:var(--fw-bold) var(--fs-14)/1 var(--font-mono);
+  --type-menu:var(--fw-regular) var(--fs-13)/1 var(--font-mono);
+  --type-label:var(--fw-bold) var(--fs-11)/1 var(--font-mono);
+  --type-icon-label:var(--fw-regular) var(--fs-12)/1.2 var(--font-mono);
+  --type-code:var(--fw-regular) var(--fs-13)/var(--lh-normal) var(--font-mono);
+}
+
+/* Nocturne OS — spacing, sizing, radii. Chrome is measured in odd pixel values
+   copied from the source art (6px title bars, 10px gutters); content uses a 4px rhythm. */
+:root{
+  --space-0:0;
+  --space-2:2px;
+  --space-3:3px;
+  --space-4:4px;
+  --space-6:6px;
+  --space-8:8px;
+  --space-10:10px;
+  --space-12:12px;
+  --space-16:16px;
+  --space-20:20px;
+  --space-24:24px;
+  --space-32:32px;
+  --space-40:40px;
+  --space-56:56px;
+  --space-80:80px;
+
+  /* radii — hardware-molded, never pill */
+  --radius-0:0;
+  --radius-2:2px;
+  --radius-4:4px;
+  --radius-6:6px;
+  --radius-8:8px;
+  --radius-10:10px;
+  --radius-window:8px;
+  --radius-control:4px;
+  --radius-icon:8px;
+  --radius-full:999px;  /* only for the three window dots and radio marks */
+
+  /* borders */
+  --border-hairline:1px; /* @kind spacing */
+  --border-hard:2px; /* @kind spacing */
+  --border-heavy:3px; /* @kind spacing */
+
+  /* fixed chrome sizes */
+  --size-menubar:26px;
+  --size-titlebar:30px;
+  --size-statusbar:22px;
+  --size-dock:64px;
+  --size-desktop-icon:44px;
+  --size-control-sm:24px;
+  --size-control-md:32px;
+  --size-control-lg:40px;
+  --size-hit-min:44px;
+}
+
+/* Nocturne OS — shadows, textures, motion. Shadows are HARD offsets, never blurred. */
+:root{
+  --shadow-none:none;
+  --shadow-hard-sm:2px 2px 0 var(--line-hard);
+  --shadow-hard:4px 4px 0 var(--line-hard);
+  --shadow-hard-lg:6px 6px 0 var(--line-hard);
+  --shadow-window:5px 5px 0 var(--ink-1000);
+  --shadow-dialog:8px 8px 0 var(--ink-1000);
+  --shadow-inset:inset 2px 2px 0 rgba(7,9,10,.55);
+  --shadow-press:inset 0 0 0 2px var(--line-hard);
+  --shadow-glow:0 0 0 2px var(--amber-500);
+  --focus-ring:0 0 0 2px var(--ink-1000),0 0 0 4px var(--state-focus);
+
+  /* textures & backgrounds */
+  --grid-line:rgba(239,231,214,.055); /* @kind color */
+  --grid-size:22px; /* @kind spacing */
+  --bg-grid:linear-gradient(var(--grid-line) 1px,transparent 1px),linear-gradient(90deg,var(--grid-line) 1px,transparent 1px); /* @kind other */
+  --bg-scanline:repeating-linear-gradient(180deg,rgba(7,9,10,.18) 0 1px,transparent 1px 3px); /* @kind other */
+  --noise-opacity:.05; /* @kind other */
+
+  /* motion — snappy, mechanical, no bounce */
+  --ease-snap:steps(2,end); /* @kind other */
+  --ease-out:cubic-bezier(.2,.8,.3,1); /* @kind other */
+  --ease-in-out:cubic-bezier(.4,0,.2,1); /* @kind other */
+  --dur-instant:60ms; /* @kind other */
+  --dur-fast:120ms; /* @kind other */
+  --dur-base:180ms; /* @kind other */
+  --dur-slow:320ms; /* @kind other */
+  --blur-overlay:2px; /* @kind spacing */
+}
+
+/* Nocturne OS — minimal element defaults. Components carry their own styling. */
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--surface-desktop);color:var(--text-body);font:var(--type-body);-webkit-font-smoothing:antialiased;text-wrap:pretty}
+h1{font:var(--type-h1);letter-spacing:var(--ls-tight);margin:0 0 var(--space-16)}
+h2{font:var(--type-h2);letter-spacing:var(--ls-tight);margin:0 0 var(--space-12)}
+h3{font:var(--type-h3);margin:0 0 var(--space-8)}
+p{margin:0 0 var(--space-12)}
+code,kbd,pre{font:var(--type-code)}
+a{color:var(--text-link);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:2px}
+a:hover{color:var(--text-link-hover)}
+::selection{background:var(--amber-500);color:var(--ink-1000)}
+:focus-visible{outline:none;box-shadow:var(--focus-ring)}
+
