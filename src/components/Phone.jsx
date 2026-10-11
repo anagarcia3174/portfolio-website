@@ -90,7 +90,7 @@ export default function Phone() {
           <Panel tone="inset" style={{ font: 'var(--type-code)', lineHeight: 1.55 }}>
             <div style={{ ...labelStyle, color: 'var(--text-dim)', marginBottom: 8 }}>NOW BUILDING</div>
             <div style={{ display: 'grid', gap: 8 }}>
-              <div><strong>Talkie</strong> — a social app for tracking movies and TV.</div>
+              <div><strong>Talkie</strong> — comments on movies and TV, pinned to the exact moment.</div>
               <div><strong>NailzByDardo</strong> — a salon management system running a real business.</div>
             </div>
           </Panel>

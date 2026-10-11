@@ -165,7 +165,7 @@ export default function Desktop({ viewport }) {
           >
             <Panel tone="paper" style={{ width: 240, font: 'var(--type-code)', lineHeight: 1.55 }}>
               <div style={{ ...labelStyle, marginBottom: 8 }}>NOTE TO SELF</div>
-              Still building Talkie.<br />Shipping NailzByDardo.<br />The links are real.<br />The desktop is not.
+              Talkie is in App Store review.<br />Shipping NailzByDardo.<br />The links are real.<br />The desktop is not.
             </Panel>
           </div>
 
